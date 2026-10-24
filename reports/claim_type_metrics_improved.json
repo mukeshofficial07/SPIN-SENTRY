@@ -1,0 +1,225 @@
+{
+  "exact_match_agreement": 0.6105,
+  "hamming_loss": 0.0885,
+  "precision_micro": 0.7618,
+  "recall_micro": 0.807,
+  "f1_micro": 0.7838,
+  "f1_macro": 0.6627,
+  "per_label": {
+    "Efficacy": {
+      "precision": 0.794,
+      "recall": 0.9147,
+      "f1": 0.8501,
+      "support": 375,
+      "confusion_matrix": [
+        [
+          88,
+          89
+        ],
+        [
+          32,
+          343
+        ]
+      ]
+    },
+    "Safety": {
+      "precision": 0.7945,
+      "recall": 0.5979,
+      "f1": 0.6824,
+      "support": 97,
+      "confusion_matrix": [
+        [
+          440,
+          15
+        ],
+        [
+          39,
+          58
+        ]
+      ]
+    },
+    "Generalizability": {
+      "precision": 0.4545,
+      "recall": 0.2174,
+      "f1": 0.2941,
+      "support": 23,
+      "confusion_matrix": [
+        [
+          523,
+          6
+        ],
+        [
+          18,
+          5
+        ]
+      ]
+    },
+    "Comparative": {
+      "precision": 0.6697,
+      "recall": 0.8202,
+      "f1": 0.7374,
+      "support": 89,
+      "confusion_matrix": [
+        [
+          427,
+          36
+        ],
+        [
+          16,
+          73
+        ]
+      ]
+    },
+    "Novelty": {
+      "precision": 0.8378,
+      "recall": 0.7561,
+      "f1": 0.7949,
+      "support": 41,
+      "confusion_matrix": [
+        [
+          505,
+          6
+        ],
+        [
+          10,
+          31
+        ]
+      ]
+    },
+    "Recommendation": {
+      "precision": 0.6,
+      "recall": 0.6364,
+      "f1": 0.6176,
+      "support": 33,
+      "confusion_matrix": [
+        [
+          505,
+          14
+        ],
+        [
+          12,
+          21
+        ]
+      ]
+    }
+  },
+  "model_name": "claim_type_model_improved",
+  "trained_at_utc": "2026-10-20T09:03:38.367353+00:00",
+  "label_source": "ai_batch_annotations",
+  "evaluation_target": "agreement_with_ai_generated_batch_labels",
+  "evaluation_note": "Evaluated on 5 holdout test papers (PMC12381666, PMC12446902, PMC12662812, PMC12743696, PMC12815918) comprising 552 examples, of which 549 (99.5%) are AI-batch heuristic annotations and 3 (0.5%) are genuine human annotations. Metrics reflect model agreement with AI heuristics, NOT human ground truth.",
+  "dataset_path": "C:\\Users\\Lenovo\\Documents\\SPIN-SENTRY\\data\\claim_annotations_reviewed.csv",
+  "dataset_sha256": "684d92afc88f853afde7f03717fd078f23945186cbc273a72239bd4c5102a969",
+  "dataset_rows": 2375,
+  "train_rows": 1823,
+  "test_rows": 552,
+  "test_size": 0.2,
+  "seed": 42,
+  "paper_count": 22,
+  "split": "paper_grouped_GroupShuffleSplit",
+  "train_papers": 17,
+  "test_papers": 5,
+  "train_paper_ids": [
+    "PMC12486974",
+    "PMC12543108",
+    "PMC12550449",
+    "PMC12551264",
+    "PMC12581794",
+    "PMC12647125",
+    "PMC12676765",
+    "PMC12678040",
+    "PMC12690432",
+    "PMC12725555",
+    "PMC12783969",
+    "PMC12825039",
+    "PMC13054461",
+    "PMC13065175",
+    "PMC13220170",
+    "PMC13618946",
+    "PMC7618564"
+  ],
+  "test_paper_ids": [
+    "PMC12381666",
+    "PMC12446902",
+    "PMC12662812",
+    "PMC12743696",
+    "PMC12815918"
+  ],
+  "labels": [
+    "Efficacy",
+    "Safety",
+    "Generalizability",
+    "Comparative",
+    "Novelty",
+    "Recommendation"
+  ],
+  "label_counts": {
+    "Efficacy": 1667,
+    "Safety": 338,
+    "Generalizability": 101,
+    "Comparative": 389,
+    "Novelty": 91,
+    "Recommendation": 159
+  },
+  "cv": {
+    "cv_folds": 5,
+    "cv_micro_f1_mean": 0.7381732203234727,
+    "cv_micro_f1_std": 0.039214239169848904,
+    "cv_macro_f1_mean": 0.5804758999744422,
+    "cv_macro_f1_std": 0.017079132893497162
+  },
+  "oof_validation": {
+    "Efficacy": {
+      "optimal_threshold": 0.45,
+      "oof_f1": 0.8447,
+      "oof_precision": 0.7968,
+      "oof_recall": 0.8986,
+      "support": 1292
+    },
+    "Safety": {
+      "optimal_threshold": 0.45,
+      "oof_f1": 0.5395,
+      "oof_precision": 0.5721,
+      "oof_recall": 0.5104,
+      "support": 241
+    },
+    "Generalizability": {
+      "optimal_threshold": 0.45,
+      "oof_f1": 0.4427,
+      "oof_precision": 0.5472,
+      "oof_recall": 0.3718,
+      "support": 78
+    },
+    "Comparative": {
+      "optimal_threshold": 0.4,
+      "oof_f1": 0.7029,
+      "oof_precision": 0.6043,
+      "oof_recall": 0.84,
+      "support": 300
+    },
+    "Novelty": {
+      "optimal_threshold": 0.45,
+      "oof_f1": 0.7111,
+      "oof_precision": 0.8,
+      "oof_recall": 0.64,
+      "support": 50
+    },
+    "Recommendation": {
+      "optimal_threshold": 0.4,
+      "oof_f1": 0.4664,
+      "oof_precision": 0.4646,
+      "oof_recall": 0.4683,
+      "support": 126
+    }
+  },
+  "thresholds_applied": {
+    "Efficacy": 0.45,
+    "Safety": 0.45,
+    "Generalizability": 0.45,
+    "Comparative": 0.4,
+    "Novelty": 0.45,
+    "Recommendation": 0.4
+  },
+  "python_version": "3.13.14 (tags/v3.13.14:fd17997, Jun 10 2026, 13:03:48) [MSC v.1944 64 bit (AMD64)]",
+  "scikit_learn_version": "1.9.1"
+}

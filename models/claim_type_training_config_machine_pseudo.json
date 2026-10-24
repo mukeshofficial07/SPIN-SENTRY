@@ -1,0 +1,41 @@
+{
+  "algorithm": "TF-IDF + OneVsRest(LogisticRegression)",
+  "label_source": "machine_generated_pseudo_label",
+  "evaluation_target": "agreement_with_machine_generated_labels",
+  "test_size": 0.25,
+  "seed": 42,
+  "split": "GroupShuffleSplit by paper_id",
+  "vectorizer": {
+    "ngram_range": [
+      1,
+      2
+    ],
+    "min_df": 1,
+    "max_features": 50000,
+    "strip_accents": "unicode"
+  },
+  "classifier": {
+    "max_iter": 2000,
+    "class_weight": "balanced",
+    "random_state": 42,
+    "threshold": 0.5
+  },
+  "labels_in_order": [
+    "Efficacy",
+    "Safety",
+    "Generalizability",
+    "Comparative",
+    "Novelty",
+    "Recommendation"
+  ],
+  "dataset_sha256": "5d7e9001298cade309acc53cc11dc3cc42f0822d1faa08ca1a34a1bc69e16866",
+  "model_includes_vectorizer": true,
+  "artifacts": {
+    "model": "C:\\Users\\Lenovo\\Documents\\SPIN-SENTRY\\models\\claim_type_model_machine_pseudo.joblib",
+    "vectorizer": "C:\\Users\\Lenovo\\Documents\\SPIN-SENTRY\\models\\claim_type_vectorizer_machine_pseudo.joblib",
+    "label_map": "C:\\Users\\Lenovo\\Documents\\SPIN-SENTRY\\models\\claim_type_label_map_machine_pseudo.json",
+    "config": "C:\\Users\\Lenovo\\Documents\\SPIN-SENTRY\\models\\claim_type_training_config_machine_pseudo.json",
+    "metrics": "C:\\Users\\Lenovo\\Documents\\SPIN-SENTRY\\reports\\claim_type_metrics_machine_pseudo.json",
+    "report": "C:\\Users\\Lenovo\\Documents\\SPIN-SENTRY\\reports\\claim_type_report_machine_pseudo.md"
+  }
+}

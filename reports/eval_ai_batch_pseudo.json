@@ -1,0 +1,120 @@
+{
+  "model_key": "pseudo",
+  "model_file": "claim_type_model_machine_pseudo.joblib",
+  "evaluated_at_utc": "2026-10-23T16:11:35.356221+00:00",
+  "evaluation_type": "agreement_with_ai_generated_batch_labels",
+  "evaluation_note": "Holdout test: 5 papers (PMC12381666, PMC12446902, PMC12662812, PMC12743696, PMC12815918). 552 total examples; 549 (99.5%) carry AI-batch heuristic labels. 3 rows (0.5%) have genuine human annotations. Metrics reflect model agreement with AI heuristics, NOT human ground truth.",
+  "n_examples": 49,
+  "thresholds_applied": {
+    "Efficacy": 0.4,
+    "Safety": 0.4,
+    "Generalizability": 0.4,
+    "Comparative": 0.4,
+    "Novelty": 0.4,
+    "Recommendation": 0.4
+  },
+  "exact_match": 0.2653,
+  "hamming_loss": 0.1599,
+  "precision_micro": 0.6322,
+  "recall_micro": 0.7857,
+  "f1_micro": 0.7006,
+  "f1_macro": 0.5688,
+  "per_label": {
+    "Efficacy": {
+      "precision": 0.8298,
+      "recall": 0.9512,
+      "f1": 0.8864,
+      "support": 41,
+      "confusion_matrix": [
+        [
+          0,
+          8
+        ],
+        [
+          2,
+          39
+        ]
+      ]
+    },
+    "Safety": {
+      "precision": 0.3,
+      "recall": 0.4286,
+      "f1": 0.3529,
+      "support": 7,
+      "confusion_matrix": [
+        [
+          35,
+          7
+        ],
+        [
+          4,
+          3
+        ]
+      ]
+    },
+    "Generalizability": {
+      "precision": 1.0,
+      "recall": 0.3333,
+      "f1": 0.5,
+      "support": 3,
+      "confusion_matrix": [
+        [
+          46,
+          0
+        ],
+        [
+          2,
+          1
+        ]
+      ]
+    },
+    "Comparative": {
+      "precision": 0.3462,
+      "recall": 0.75,
+      "f1": 0.4737,
+      "support": 12,
+      "confusion_matrix": [
+        [
+          20,
+          17
+        ],
+        [
+          3,
+          9
+        ]
+      ]
+    },
+    "Novelty": {
+      "precision": 1.0,
+      "recall": 0.6667,
+      "f1": 0.8,
+      "support": 3,
+      "confusion_matrix": [
+        [
+          46,
+          0
+        ],
+        [
+          1,
+          2
+        ]
+      ]
+    },
+    "Recommendation": {
+      "precision": 1.0,
+      "recall": 0.25,
+      "f1": 0.4,
+      "support": 4,
+      "confusion_matrix": [
+        [
+          45,
+          0
+        ],
+        [
+          3,
+          1
+        ]
+      ]
+    }
+  }
+}

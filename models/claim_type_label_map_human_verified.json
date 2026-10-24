@@ -1,0 +1,18 @@
+{
+  "classes": [
+    "Efficacy",
+    "Safety",
+    "Generalizability",
+    "Comparative",
+    "Novelty",
+    "Recommendation"
+  ],
+  "index_to_label": {
+    "0": "Efficacy",
+    "1": "Safety",
+    "2": "Generalizability",
+    "3": "Comparative",
+    "4": "Novelty",
+    "5": "Recommendation"
+  }
+}

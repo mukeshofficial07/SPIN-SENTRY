@@ -1,0 +1,174 @@
+{
+  "trained_at_utc": "2026-10-20T07:45:29.543222+00:00",
+  "label_source": "human_verified",
+  "evaluation_target": "agreement_with_ai_generated_batch_labels",
+  "dataset_path": "C:\\Users\\Lenovo\\Documents\\SPIN-SENTRY\\data\\claim_annotations_reviewed.csv",
+  "dataset_sha256": "684d92afc88f853afde7f03717fd078f23945186cbc273a72239bd4c5102a969",
+  "dataset_rows": 2375,
+  "train_rows": 1823,
+  "test_rows": 552,
+  "test_size": 0.2,
+  "seed": 42,
+  "paper_count": 22,
+  "split": "paper_grouped",
+  "train_papers": 17,
+  "test_papers": 5,
+  "train_paper_ids": [
+    "PMC12486974",
+    "PMC12543108",
+    "PMC12550449",
+    "PMC12551264",
+    "PMC12581794",
+    "PMC12647125",
+    "PMC12676765",
+    "PMC12678040",
+    "PMC12690432",
+    "PMC12725555",
+    "PMC12783969",
+    "PMC12825039",
+    "PMC13054461",
+    "PMC13065175",
+    "PMC13220170",
+    "PMC13618946",
+    "PMC7618564"
+  ],
+  "test_paper_ids": [
+    "PMC12381666",
+    "PMC12446902",
+    "PMC12662812",
+    "PMC12743696",
+    "PMC12815918"
+  ],
+  "multi_label_rows": 349,
+  "labels": [
+    "Efficacy",
+    "Safety",
+    "Generalizability",
+    "Comparative",
+    "Novelty",
+    "Recommendation"
+  ],
+  "label_counts": {
+    "Comparative": 389,
+    "Efficacy": 1667,
+    "Novelty": 91,
+    "Recommendation": 159,
+    "Generalizability": 101,
+    "Safety": 338
+  },
+  "exact_match_agreement": 0.5942028985507246,
+  "f1_micro": 0.7333333333333333,
+  "f1_macro": 0.5275647013658531,
+  "precision_micro": 0.7884615384615384,
+  "recall_micro": 0.6854103343465046,
+  "hamming_loss": 0.09903381642512077,
+  "per_label": {
+    "Efficacy": {
+      "precision": 0.8035264483627204,
+      "recall": 0.8506666666666667,
+      "f1": 0.8264248704663213,
+      "support": 375,
+      "confusion_matrix": [
+        [
+          99,
+          78
+        ],
+        [
+          56,
+          319
+        ]
+      ]
+    },
+    "Safety": {
+      "precision": 0.8269230769230769,
+      "recall": 0.44329896907216493,
+      "f1": 0.5771812080536913,
+      "support": 97,
+      "confusion_matrix": [
+        [
+          446,
+          9
+        ],
+        [
+          54,
+          43
+        ]
+      ]
+    },
+    "Generalizability": {
+      "precision": 0.25,
+      "recall": 0.043478260869565216,
+      "f1": 0.07407407407407407,
+      "support": 23,
+      "confusion_matrix": [
+        [
+          526,
+          3
+        ],
+        [
+          22,
+          1
+        ]
+      ]
+    },
+    "Comparative": {
+      "precision": 0.725,
+      "recall": 0.651685393258427,
+      "f1": 0.6863905325443787,
+      "support": 89,
+      "confusion_matrix": [
+        [
+          441,
+          22
+        ],
+        [
+          31,
+          58
+        ]
+      ]
+    },
+    "Novelty": {
+      "precision": 0.7857142857142857,
+      "recall": 0.5365853658536586,
+      "f1": 0.6376811594202898,
+      "support": 41,
+      "confusion_matrix": [
+        [
+          505,
+          6
+        ],
+        [
+          19,
+          22
+        ]
+      ]
+    },
+    "Recommendation": {
+      "precision": 0.7272727272727273,
+      "recall": 0.24242424242424243,
+      "f1": 0.36363636363636365,
+      "support": 33,
+      "confusion_matrix": [
+        [
+          516,
+          3
+        ],
+        [
+          25,
+          8
+        ]
+      ]
+    }
+  },
+  "python_version": "3.13.14 (tags/v3.13.14:fd17997, Jun 10 2026, 13:03:48) [MSC v.1944 64 bit (AMD64)]",
+  "scikit_learn_version": "1.9.1",
+  "artifacts": {
+    "model": "C:\\Users\\Lenovo\\Documents\\SPIN-SENTRY\\models\\claim_type_model_human_verified.joblib",
+    "vectorizer": "C:\\Users\\Lenovo\\Documents\\SPIN-SENTRY\\models\\claim_type_vectorizer_human_verified.joblib",
+    "label_map": "C:\\Users\\Lenovo\\Documents\\SPIN-SENTRY\\models\\claim_type_label_map_human_verified.json",
+    "config": "C:\\Users\\Lenovo\\Documents\\SPIN-SENTRY\\models\\claim_type_training_config_human_verified.json",
+    "metrics": "C:\\Users\\Lenovo\\Documents\\SPIN-SENTRY\\reports\\claim_type_metrics_human_verified.json",
+    "report": "C:\\Users\\Lenovo\\Documents\\SPIN-SENTRY\\reports\\claim_type_report_human_verified.md"
+  },
+  "evaluation_note": "Holdout test set consists of 552 examples across 5 papers, of which 549 (99.5%) were machine/rule-annotated during batch triage stamped under Mukesh. Metrics reflect alignment with batch heuristic labels, not independent human ground truth."
+}

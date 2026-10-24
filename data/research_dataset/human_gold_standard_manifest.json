@@ -1,0 +1,101 @@
+{
+  "manifest_name": "SPIN-SENTRY Human-Reviewed Gold Standard Dataset",
+  "created_at_utc": "2026-10-23T15:52:04.394812+00:00",
+  "source_dataset": "data\\research_dataset\\candidates.csv",
+  "inclusion_criteria": [
+    "annotation_status in ('approved', 'confirmed', 'corrected')",
+    "source_text_checked == 'yes' (verified against linked PMC source text)",
+    "Explicit human annotator recorded (annotator == 'Mukesh')",
+    "AI-assisted annotations without human override excluded",
+    "Non-empty verified_labels matching canonical taxonomy [Efficacy, Safety, Generalizability, Comparative, Novelty, Recommendation]"
+  ],
+  "corpus_accounting": {
+    "total_candidates_in_corpus": 3737,
+    "positive_gold_standard_claims": 197,
+    "negative_gold_verified_non_claims": 336,
+    "rejected_non_claims_unverified_source": 80,
+    "uncertain_candidates_human_flagged": 40,
+    "positive_claims_unverified_source_excluded": 112,
+    "pending_ai_assisted_candidates": 2972,
+    "sum_check": 3737
+  },
+  "gold_standard_statistics": {
+    "positive_claim_sentences": 197,
+    "single_label_claims": 121,
+    "multi_label_claims": 76,
+    "total_label_assignments": 285,
+    "papers_covered": 22,
+    "per_label_counts": {
+      "Efficacy": 150,
+      "Safety": 33,
+      "Generalizability": 16,
+      "Comparative": 63,
+      "Novelty": 8,
+      "Recommendation": 15
+    },
+    "per_label_sufficiency": {
+      "Efficacy": {
+        "count": 150,
+        "target_min": 30,
+        "status": "sufficient"
+      },
+      "Safety": {
+        "count": 33,
+        "target_min": 30,
+        "status": "sufficient"
+      },
+      "Generalizability": {
+        "count": 16,
+        "target_min": 30,
+        "status": "provisional"
+      },
+      "Comparative": {
+        "count": 63,
+        "target_min": 30,
+        "status": "sufficient"
+      },
+      "Novelty": {
+        "count": 8,
+        "target_min": 30,
+        "status": "scarce"
+      },
+      "Recommendation": {
+        "count": 15,
+        "target_min": 30,
+        "status": "provisional"
+      }
+    },
+    "paper_distribution": {
+      "PMC12551264": 24,
+      "PMC13065175": 16,
+      "PMC12743696": 14,
+      "PMC12381666": 12,
+      "PMC12676765": 11,
+      "PMC12446902": 11,
+      "PMC12783969": 9,
+      "PMC12550449": 9,
+      "PMC12543108": 9,
+      "PMC12486974": 9,
+      "PMC7618564": 8,
+      "PMC12678040": 8,
+      "PMC13054461": 7,
+      "PMC12581794": 7,
+      "PMC13220170": 7,
+      "PMC12647125": 7,
+      "PMC12815918": 6,
+      "PMC12662812": 6,
+      "PMC12690432": 6,
+      "PMC12825039": 4,
+      "PMC12725555": 4,
+      "PMC13618946": 3
+    }
+  },
+  "scientific_limitations": [
+    "Dataset reflects review of 22 PubMed Central open-access RCT/clinical trial papers.",
+    "Efficacy (150) and Comparative (63) have robust sample sizes (>= 30).",
+    "Safety (33) meets the minimal 30-sample evaluation threshold.",
+    "Generalizability (16), Recommendation (15), and Novelty (8) remain below the 30-sample benchmark and should be interpreted as provisional.",
+    "Evaluation metrics on this gold standard measure real human agreement, not agreement with AI heuristics.",
+    "This prototype classifier is for screening and discrepancy discovery, NOT clinical decision making."
+  ]
+}

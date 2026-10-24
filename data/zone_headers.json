@@ -1,0 +1,88 @@
+{
+  "_comment": "Regex patterns for identifying section zones. Patterns are case-insensitive.",
+  "Results": {
+    "patterns": [
+      "^results?$",
+      "^results?\\s+and\\s+discussion$",
+      "^results?\\s+and\\s+findings?$",
+      "^efficacy\\s+(results?|outcomes?|findings?)$",
+      "^clinical\\s+(results?|findings?)$",
+      "^primary\\s+results?$",
+      "^secondary\\s+results?$",
+      "^findings?$"
+    ],
+    "priority": 2
+  },
+  "Harms": {
+    "patterns": [
+      "^adverse\\s+events?$",
+      "^adverse\\s+(effects?|reactions?|outcomes?)$",
+      "^safety$",
+      "^safety\\s+(profile|outcomes?|results?|data|analysis)$",
+      "^tolerability$",
+      "^tolerability\\s+and\\s+safety$",
+      "^safety\\s+and\\s+tolerability$",
+      "^harms?$",
+      "^side\\s+effects?$",
+      "^toxicity$",
+      "^toxicity\\s+(profile|data|results?)$",
+      "^complications?$",
+      "^discontinuations?$",
+      "^withdrawals?$",
+      "^serious\\s+adverse",
+      "^aes?$",
+      "^saes?$"
+    ],
+    "priority": 3
+  },
+  "Limitations": {
+    "patterns": [
+      "^limitations?$",
+      "^study\\s+limitations?$",
+      "^limitations?\\s+and\\s+future",
+      "^strengths?\\s+and\\s+limitations?$",
+      "^limitations?\\s+of\\s+the\\s+study$",
+      "^caveats?$",
+      "^weaknesses?$"
+    ],
+    "priority": 4
+  },
+  "Methods": {
+    "patterns": [
+      "^methods?$",
+      "^methods?\\s+and\\s+materials?$",
+      "^materials?\\s+and\\s+methods?$",
+      "^methodology$",
+      "^study\\s+design$",
+      "^patients?\\s+and\\s+methods?$",
+      "^participants?$",
+      "^subjects?$",
+      "^eligibility\\s+criteria$",
+      "^inclusion\\s+criteria$",
+      "^exclusion\\s+criteria$",
+      "^study\\s+population$",
+      "^intervention",
+      "^statistical\\s+analysis$",
+      "^data\\s+analysis$",
+      "^procedures?$",
+      "^randomization$",
+      "^design$"
+    ],
+    "priority": 1
+  },
+  "Discussion": {
+    "patterns": [
+      "^discussion$",
+      "^general\\s+discussion$",
+      "^discussion\\s+and\\s+conclusions?$"
+    ],
+    "priority": 5
+  },
+  "Conclusion": {
+    "patterns": [
+      "^conclusions?$",
+      "^concluding\\s+remarks?$"
+    ],
+    "priority": 6
+  }
+}

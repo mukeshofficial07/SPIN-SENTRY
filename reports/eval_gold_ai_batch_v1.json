@@ -1,0 +1,120 @@
+{
+  "model_key": "ai_batch_v1",
+  "model_file": "claim_type_model_ai_batch_v1.joblib",
+  "evaluated_at_utc": "2026-10-23T16:11:35.585505+00:00",
+  "evaluation_type": "human_gold_standard",
+  "evaluation_note": "Evaluated on 197 genuinely human-reviewed rows across 22 papers.",
+  "n_examples": 197,
+  "thresholds_applied": {
+    "Efficacy": 0.4,
+    "Safety": 0.4,
+    "Generalizability": 0.4,
+    "Comparative": 0.4,
+    "Novelty": 0.4,
+    "Recommendation": 0.4
+  },
+  "exact_match": 0.5228,
+  "hamming_loss": 0.1134,
+  "precision_micro": 0.7382,
+  "recall_micro": 0.8211,
+  "f1_micro": 0.7774,
+  "f1_macro": 0.7135,
+  "per_label": {
+    "Efficacy": {
+      "precision": 0.8303,
+      "recall": 0.9133,
+      "f1": 0.8698,
+      "support": 150,
+      "confusion_matrix": [
+        [
+          19,
+          28
+        ],
+        [
+          13,
+          137
+        ]
+      ]
+    },
+    "Safety": {
+      "precision": 0.575,
+      "recall": 0.697,
+      "f1": 0.6301,
+      "support": 33,
+      "confusion_matrix": [
+        [
+          147,
+          17
+        ],
+        [
+          10,
+          23
+        ]
+      ]
+    },
+    "Generalizability": {
+      "precision": 0.625,
+      "recall": 0.625,
+      "f1": 0.625,
+      "support": 16,
+      "confusion_matrix": [
+        [
+          175,
+          6
+        ],
+        [
+          6,
+          10
+        ]
+      ]
+    },
+    "Comparative": {
+      "precision": 0.6866,
+      "recall": 0.7302,
+      "f1": 0.7077,
+      "support": 63,
+      "confusion_matrix": [
+        [
+          113,
+          21
+        ],
+        [
+          17,
+          46
+        ]
+      ]
+    },
+    "Novelty": {
+      "precision": 0.7273,
+      "recall": 1.0,
+      "f1": 0.8421,
+      "support": 8,
+      "confusion_matrix": [
+        [
+          186,
+          3
+        ],
+        [
+          0,
+          8
+        ]
+      ]
+    },
+    "Recommendation": {
+      "precision": 0.5556,
+      "recall": 0.6667,
+      "f1": 0.6061,
+      "support": 15,
+      "confusion_matrix": [
+        [
+          174,
+          8
+        ],
+        [
+          5,
+          10
+        ]
+      ]
+    }
+  }
+}

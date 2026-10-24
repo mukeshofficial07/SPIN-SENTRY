@@ -1,0 +1,36 @@
+{
+  "Efficacy": [
+    "efficacy", "effective", "effectiveness", "significant reduction", "demonstrated",
+    "superior", "improved", "improvement", "benefit", "reduced", "decrease", "lower",
+    "better outcome", "significant", "response rate", "remission", "cure", "clinical benefit",
+    "therapeutic", "treatment effect", "statistically significant", "p <", "p<",
+    "odds ratio", "relative risk", "hazard ratio", "confidence interval"
+  ],
+  "Safety": [
+    "well-tolerated", "safe", "safety", "tolerated", "no serious", "favorable safety",
+    "adverse event", "side effect", "tolerability", "no significant adverse", "toxicity",
+    "harm", "risk", "discontinuation", "withdrawal", "complication", "mortality",
+    "morbidity", "serious adverse", "AE", "SAE", "grade 3", "grade 4"
+  ],
+  "Generalizability": [
+    "generalizable", "generaliz", "across", "diverse population", "all patients",
+    "broad", "universal", "applicable", "various", "multiple", "different settings",
+    "real-world", "routine clinical", "regardless", "irrespective", "external validity",
+    "population", "demographic", "subgroup"
+  ],
+  "Comparative": [
+    "compared to", "compared with", "versus", "vs", "superior to", "better than",
+    "outperformed", "non-inferior", "equivalent", "similar to", "standard of care",
+    "current treatment", "placebo", "control", "benchmark", "head-to-head", "comparative"
+  ],
+  "Novelty": [
+    "first", "novel", "first-in-class", "pioneering", "unprecedented", "new approach",
+    "innovative", "first demonstration", "original", "never before", "unique",
+    "breakthrough", "discovery"
+  ],
+  "Recommendation": [
+    "should be considered", "recommend", "clinical use", "practice", "guideline",
+    "should be adopted", "warranted", "indicated for", "should receive",
+    "can be used", "may be used", "appropriate for", "suitable for"
+  ]
+}

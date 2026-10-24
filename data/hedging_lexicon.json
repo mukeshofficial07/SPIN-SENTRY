@@ -1,0 +1,35 @@
+{
+  "_comment": "Hedging words with weights. Higher weight = stronger hedge = lower claim strength.",
+  "strong_hedges": {
+    "words": [
+      "might", "may", "could", "possibly", "perhaps", "potential", "potentially",
+      "preliminary", "tentative", "suggest", "suggests", "suggested", "indicating",
+      "appears", "seem", "seems", "seemed", "apparent", "apparently",
+      "uncertain", "unclear", "unknown", "hypothesize", "speculate"
+    ],
+    "weight": 0.7
+  },
+  "moderate_hedges": {
+    "words": [
+      "likely", "probable", "probably", "generally", "typically", "tend",
+      "tends", "often", "in some cases", "in certain", "limited evidence",
+      "initial", "early", "exploratory", "pilot"
+    ],
+    "weight": 0.5
+  },
+  "mild_hedges": {
+    "words": [
+      "somewhat", "relatively", "moderately", "partially", "mainly", "mostly",
+      "overall", "generally speaking", "broadly"
+    ],
+    "weight": 0.3
+  },
+  "certainty_markers": {
+    "words": [
+      "clearly", "definitively", "conclusively", "demonstrate", "demonstrates",
+      "demonstrated", "prove", "proves", "proven", "confirm", "confirms",
+      "confirmed", "establish", "establishes", "established", "show", "shows"
+    ],
+    "weight": -0.2
+  }
+}

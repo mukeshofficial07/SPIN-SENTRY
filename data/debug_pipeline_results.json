@@ -1,0 +1,1164 @@
+{
+  "Safe": {
+    "pdf_path": "data/demo_papers/SPIN_SENTRY_Demo_Safe.pdf",
+    "title": "A Synthetic Feasibility Study of QuietDesk for Self-Reported",
+    "screening_notice": "Automated spin flags are heuristic screening signals for research exploration, not proof of scientific misconduct or clinical trial invalidity.",
+    "summary": {
+      "total_claims": 3,
+      "flagged_claims": 0,
+      "supported_claims": 1,
+      "weak_claims": 0,
+      "spin_risk": "\ud83d\udfe2 Low",
+      "avg_we_score": 0.14,
+      "flag_rate": 0.0,
+      "empirical_claims": 1,
+      "empirical_flagged": 0,
+      "empirical_avg_we": 0.418,
+      "protocol_statements": 2,
+      "contradiction_count": 0
+    },
+    "claims": [
+      {
+        "sentence": "This fictional feasibility study describes QuietDesk in 40 adult volunteers over two weeks.",
+        "types": [
+          "Efficacy"
+        ],
+        "role": "Objective",
+        "is_empirical_claim": false,
+        "entities": {
+          "drugs": [],
+          "outcomes": [],
+          "populations": [
+            "adult"
+          ],
+          "all_entities": [
+            {
+              "text": "QuietDesk",
+              "label": "ORG"
+            },
+            {
+              "text": "40",
+              "label": "CARDINAL"
+            },
+            {
+              "text": "two weeks",
+              "label": "DATE"
+            }
+          ],
+          "nlp_available": true
+        },
+        "hedging": 1.0,
+        "hedging_words": [],
+        "type_scores": {
+          "Efficacy": 0.0,
+          "Safety": 0.0,
+          "Generalizability": 0.0,
+          "Comparative": 0.0,
+          "Novelty": 0.0,
+          "Recommendation": 0.0
+        },
+        "zone_route": "Methods"
+      },
+      {
+        "sentence": "Participants reported slightly\nmore scheduled breaks than at baseline.",
+        "types": [
+          "Efficacy"
+        ],
+        "role": "Finding / Claim",
+        "is_empirical_claim": true,
+        "entities": {
+          "drugs": [],
+          "outcomes": [],
+          "populations": [
+            "participants"
+          ],
+          "all_entities": [],
+          "nlp_available": true
+        },
+        "hedging": 1.0,
+        "hedging_words": [],
+        "type_scores": {
+          "Efficacy": 0.0,
+          "Safety": 0.0,
+          "Generalizability": 0.0,
+          "Comparative": 0.0,
+          "Novelty": 0.0,
+          "Recommendation": 0.0
+        },
+        "zone_route": "Results"
+      },
+      {
+        "sentence": "Because the study was small, short, and lacked a randomized control group,\nresults are descriptive and do not establish improved health or productivity.",
+        "types": [
+          "Efficacy"
+        ],
+        "role": "Limitation / Caution",
+        "is_empirical_claim": false,
+        "entities": {
+          "drugs": [],
+          "outcomes": [],
+          "populations": [
+            "group"
+          ],
+          "all_entities": [],
+          "nlp_available": true
+        },
+        "hedging": 1.0,
+        "hedging_words": [
+          "establish"
+        ],
+        "type_scores": {
+          "Efficacy": 0.0,
+          "Comparative": 0.0,
+          "Safety": 0.0,
+          "Generalizability": 0.0,
+          "Novelty": 0.0,
+          "Recommendation": 0.0
+        },
+        "zone_route": "Limitations"
+      }
+    ],
+    "reports": [
+      {
+        "claim": "This fictional feasibility study describes QuietDesk in 40 adult volunteers over two weeks.",
+        "claim_types": [
+          "Efficacy"
+        ],
+        "role": "Objective",
+        "is_empirical_claim": false,
+        "zone_route": "Methods",
+        "evidence_items": [
+          {
+            "evidence": "Four participants did not complete follow-up.",
+            "source_section": "Results",
+            "forward": 0.0017,
+            "reverse": 0.0279,
+            "gap": 0.9721,
+            "fwd_contradiction": 0.48,
+            "fwd_neutral": 0.5183,
+            "model_used": "nli-MiniLM2",
+            "rank": 1
+          },
+          {
+            "evidence": "The primary descriptive measure was self-reported scheduled breaks per workday.",
+            "source_section": "Methods",
+            "forward": 0.0015,
+            "reverse": 0.0043,
+            "gap": 0.9957,
+            "fwd_contradiction": 0.2832,
+            "fwd_neutral": 0.7153,
+            "model_used": "nli-MiniLM2",
+            "rank": 2
+          },
+          {
+            "evidence": "The study assessed feasibility, not efficacy.",
+            "source_section": "Methods",
+            "forward": 0.0016,
+            "reverse": 0.0426,
+            "gap": 0.9574,
+            "fwd_contradiction": 0.1951,
+            "fwd_neutral": 0.8032,
+            "model_used": "nli-MiniLM2",
+            "rank": 3
+          }
+        ],
+        "esi": 0.5,
+        "relevance": 0.3,
+        "we_score": 0.0,
+        "spin_flag": false,
+        "support_label": "Protocol / Method (Consistent)",
+        "explanation": "Study protocol or design statement aligned with Results section.",
+        "top_evidence": "Four participants did not complete follow-up.",
+        "forward": 0.002,
+        "reverse": 0.028,
+        "gap": 0.972,
+        "hedging": 1.0,
+        "hedging_words": [],
+        "model_used": "nli-MiniLM2",
+        "esi_notes": [
+          "Analysis type not detected, using default",
+          "ESI assigned: 0.5"
+        ]
+      },
+      {
+        "claim": "Participants reported slightly\nmore scheduled breaks than at baseline.",
+        "claim_types": [
+          "Efficacy"
+        ],
+        "role": "Finding / Claim",
+        "is_empirical_claim": true,
+        "zone_route": "Results",
+        "evidence_items": [
+          {
+            "evidence": "Among completers, mean self-reported breaks per workday increased from 1.8 at baseline to 2.1 at week two.",
+            "source_section": "Results",
+            "forward": 0.8367,
+            "reverse": 0.0031,
+            "gap": 0.9969,
+            "fwd_contradiction": 0.031,
+            "fwd_neutral": 0.1322,
+            "model_used": "nli-MiniLM2",
+            "rank": 1
+          },
+          {
+            "evidence": "Thirty-six participants completed follow-up.",
+            "source_section": "Results",
+            "forward": 0.0525,
+            "reverse": 0.0014,
+            "gap": 0.9986,
+            "fwd_contradiction": 0.0384,
+            "fwd_neutral": 0.909,
+            "model_used": "nli-MiniLM2",
+            "rank": 2
+          },
+          {
+            "evidence": "Four participants did not complete follow-up.",
+            "source_section": "Results",
+            "forward": 0.0496,
+            "reverse": 0.012,
+            "gap": 0.988,
+            "fwd_contradiction": 0.0067,
+            "fwd_neutral": 0.9437,
+            "model_used": "nli-MiniLM2",
+            "rank": 3
+          }
+        ],
+        "esi": 0.5,
+        "relevance": 1.0,
+        "we_score": 0.418,
+        "spin_flag": false,
+        "support_label": "Supported",
+        "explanation": "Strong forward entailment (0.84) from Results evidence; consistent with trial body.",
+        "top_evidence": "Among completers, mean self-reported breaks per workday increased from 1.8 at baseline to 2.1 at week two.",
+        "forward": 0.837,
+        "reverse": 0.003,
+        "gap": 0.997,
+        "hedging": 1.0,
+        "hedging_words": [],
+        "model_used": "nli-MiniLM2",
+        "esi_notes": [
+          "Analysis type not detected, using default",
+          "ESI assigned: 0.5"
+        ]
+      },
+      {
+        "claim": "Because the study was small, short, and lacked a randomized control group,\nresults are descriptive and do not establish improved health or productivity.",
+        "claim_types": [
+          "Efficacy"
+        ],
+        "role": "Limitation / Caution",
+        "is_empirical_claim": false,
+        "zone_route": "Limitations",
+        "evidence_items": [
+          {
+            "evidence": "Larger controlled studies would be needed to assess effectiveness.",
+            "source_section": "Limitations",
+            "forward": 0.0008,
+            "reverse": 0.0092,
+            "gap": 0.9908,
+            "fwd_contradiction": 0.9029,
+            "fwd_neutral": 0.0963,
+            "model_used": "nli-MiniLM2",
+            "rank": 1
+          },
+          {
+            "evidence": "The observed increase is small and could reflect self-reporting, observation effects, or unrelated changes.",
+            "source_section": "Discussion",
+            "forward": 0.0011,
+            "reverse": 0.0136,
+            "gap": 0.9864,
+            "fwd_contradiction": 0.5915,
+            "fwd_neutral": 0.4074,
+            "model_used": "nli-MiniLM2",
+            "rank": 2
+          },
+          {
+            "evidence": "Results may not generalize beyond this volunteer sample.",
+            "source_section": "Limitations",
+            "forward": 0.0027,
+            "reverse": 0.0188,
+            "gap": 0.9812,
+            "fwd_contradiction": 0.2175,
+            "fwd_neutral": 0.7798,
+            "model_used": "nli-MiniLM2",
+            "rank": 3
+          }
+        ],
+        "esi": 0.5,
+        "relevance": 0.6,
+        "we_score": 0.0,
+        "spin_flag": false,
+        "support_label": "Cautious Limitation / Disclaimer (Aligned)",
+        "explanation": "Trial limitation statement explicitly acknowledging constraints in Limitations; avoids overstatement.",
+        "top_evidence": "Larger controlled studies would be needed to assess effectiveness.",
+        "forward": 0.001,
+        "reverse": 0.009,
+        "gap": 0.991,
+        "hedging": 1.0,
+        "hedging_words": [
+          "establish"
+        ],
+        "model_used": "nli-MiniLM2",
+        "esi_notes": [
+          "Analysis type not detected, using default",
+          "ESI assigned: 0.5"
+        ]
+      }
+    ],
+    "warnings": [],
+    "elapsed_seconds": 13.32,
+    "model_status": {
+      "model_name": "cross-encoder/nli-MiniLM2-L6-H768",
+      "loaded": true,
+      "error": null,
+      "fallback_active": false
+    }
+  },
+  "Risk": {
+    "pdf_path": "data/demo_papers/SPIN_SENTRY_Demo_Risk.pdf",
+    "title": "A Synthetic Evaluation of FocusBoard for Short-Term Study",
+    "screening_notice": "Automated spin flags are heuristic screening signals for research exploration, not proof of scientific misconduct or clinical trial invalidity.",
+    "summary": {
+      "total_claims": 3,
+      "flagged_claims": 2,
+      "supported_claims": 0,
+      "weak_claims": 0,
+      "spin_risk": "\ud83d\udfe1 Moderate",
+      "avg_we_score": 0.014,
+      "flag_rate": 0.667,
+      "empirical_claims": 2,
+      "empirical_flagged": 2,
+      "empirical_avg_we": 0.021,
+      "protocol_statements": 1,
+      "contradiction_count": 0
+    },
+    "claims": [
+      {
+        "sentence": "This fictional study evaluates FocusBoard among 84 university volunteers over three weeks.",
+        "types": [
+          "Efficacy"
+        ],
+        "role": "Objective",
+        "is_empirical_claim": false,
+        "entities": {
+          "drugs": [],
+          "outcomes": [],
+          "populations": [],
+          "all_entities": [
+            {
+              "text": "FocusBoard",
+              "label": "ORG"
+            },
+            {
+              "text": "84",
+              "label": "CARDINAL"
+            },
+            {
+              "text": "three weeks",
+              "label": "DATE"
+            }
+          ],
+          "nlp_available": true
+        },
+        "hedging": 1.0,
+        "hedging_words": [],
+        "type_scores": {
+          "Efficacy": 0.0,
+          "Safety": 0.0,
+          "Generalizability": 0.0,
+          "Comparative": 0.0,
+          "Novelty": 0.0,
+          "Recommendation": 0.0
+        },
+        "zone_route": "Methods"
+      },
+      {
+        "sentence": "The intervention group\nhad a higher average planning-confidence score at follow-up.",
+        "types": [
+          "Efficacy"
+        ],
+        "role": "Finding / Claim",
+        "is_empirical_claim": true,
+        "entities": {
+          "drugs": [],
+          "outcomes": [],
+          "populations": [
+            "group"
+          ],
+          "all_entities": [],
+          "nlp_available": true
+        },
+        "hedging": 1.0,
+        "hedging_words": [],
+        "type_scores": {
+          "Efficacy": 0.0,
+          "Safety": 0.0,
+          "Generalizability": 0.0,
+          "Comparative": 0.0,
+          "Novelty": 0.0,
+          "Recommendation": 0.0
+        },
+        "zone_route": "Results"
+      },
+      {
+        "sentence": "The abstract calls the tool effective for improving study\nperformance, although the measured endpoint was planning confidence rather than exam performance.",
+        "types": [
+          "Efficacy"
+        ],
+        "role": "Finding / Claim",
+        "is_empirical_claim": true,
+        "entities": {
+          "drugs": [],
+          "outcomes": [
+            "endpoint"
+          ],
+          "populations": [],
+          "all_entities": [],
+          "nlp_available": true
+        },
+        "hedging": 1.0,
+        "hedging_words": [],
+        "type_scores": {
+          "Efficacy": 0.25,
+          "Safety": 0.0,
+          "Generalizability": 0.0,
+          "Comparative": 0.0,
+          "Novelty": 0.0,
+          "Recommendation": 0.0
+        },
+        "zone_route": "Results"
+      }
+    ],
+    "reports": [
+      {
+        "claim": "This fictional study evaluates FocusBoard among 84 university volunteers over three weeks.",
+        "claim_types": [
+          "Efficacy"
+        ],
+        "role": "Objective",
+        "is_empirical_claim": false,
+        "zone_route": "Methods",
+        "evidence_items": [
+          {
+            "evidence": "84 volunteers were assigned to FocusBoard or usual planning.",
+            "source_section": "Methods",
+            "forward": 0.0029,
+            "reverse": 0.2278,
+            "gap": 0.7722,
+            "fwd_contradiction": 0.0055,
+            "fwd_neutral": 0.9916,
+            "model_used": "nli-MiniLM2",
+            "rank": 1
+          },
+          {
+            "evidence": "Fourteen participants did not complete the final survey.",
+            "source_section": "Results",
+            "forward": 0.0018,
+            "reverse": 0.0141,
+            "gap": 0.9859,
+            "fwd_contradiction": 0.2258,
+            "fwd_neutral": 0.7725,
+            "model_used": "nli-MiniLM2",
+            "rank": 2
+          },
+          {
+            "evidence": "Mean confidence increased from 5.2 to 6.7 in FocusBoard and from 5.1 to 6.0 in comparison.",
+            "source_section": "Results",
+            "forward": 0.0013,
+            "reverse": 0.003,
+            "gap": 0.997,
+            "fwd_contradiction": 0.0081,
+            "fwd_neutral": 0.9906,
+            "model_used": "nli-MiniLM2",
+            "rank": 3
+          }
+        ],
+        "esi": 0.5,
+        "relevance": 0.3,
+        "we_score": 0.0,
+        "spin_flag": false,
+        "support_label": "Protocol / Method (Consistent)",
+        "explanation": "Study protocol or design statement aligned with Methods section.",
+        "top_evidence": "84 volunteers were assigned to FocusBoard or usual planning.",
+        "forward": 0.003,
+        "reverse": 0.228,
+        "gap": 0.772,
+        "hedging": 1.0,
+        "hedging_words": [],
+        "model_used": "nli-MiniLM2",
+        "esi_notes": [
+          "Analysis type not detected, using default",
+          "ESI assigned: 0.5"
+        ]
+      },
+      {
+        "claim": "The intervention group\nhad a higher average planning-confidence score at follow-up.",
+        "claim_types": [
+          "Efficacy"
+        ],
+        "role": "Finding / Claim",
+        "is_empirical_claim": true,
+        "zone_route": "Results",
+        "evidence_items": [
+          {
+            "evidence": "Mean confidence increased from 5.2 to 6.7 in FocusBoard and from 5.1 to 6.0 in comparison.",
+            "source_section": "Results",
+            "forward": 0.071,
+            "reverse": 0.0025,
+            "gap": 0.9975,
+            "fwd_contradiction": 0.0117,
+            "fwd_neutral": 0.9173,
+            "model_used": "nli-MiniLM2",
+            "rank": 1
+          },
+          {
+            "evidence": "Results suggest a modest short-term improvement in self-reported planning confidence.",
+            "source_section": "Discussion",
+            "forward": 0.0102,
+            "reverse": 0.0316,
+            "gap": 0.9684,
+            "fwd_contradiction": 0.0054,
+            "fwd_neutral": 0.9844,
+            "model_used": "nli-MiniLM2",
+            "rank": 2
+          },
+          {
+            "evidence": "Exam scores and retention were not measured.",
+            "source_section": "Results",
+            "forward": 0.0042,
+            "reverse": 0.0037,
+            "gap": 0.9963,
+            "fwd_contradiction": 0.0146,
+            "fwd_neutral": 0.9813,
+            "model_used": "nli-MiniLM2",
+            "rank": 3
+          }
+        ],
+        "esi": 0.5,
+        "relevance": 1.0,
+        "we_score": 0.035,
+        "spin_flag": true,
+        "support_label": "Flagged (Unverified / Outcome Mismatch)",
+        "explanation": "Direct textual entailment in Results was low (0.07). Specific numerical findings may be in unparsed tables or unverified by prose.",
+        "top_evidence": "Mean confidence increased from 5.2 to 6.7 in FocusBoard and from 5.1 to 6.0 in comparison.",
+        "forward": 0.071,
+        "reverse": 0.003,
+        "gap": 0.998,
+        "hedging": 1.0,
+        "hedging_words": [],
+        "model_used": "nli-MiniLM2",
+        "esi_notes": [
+          "Analysis: Adjusted",
+          "ESI assigned: 0.5"
+        ]
+      },
+      {
+        "claim": "The abstract calls the tool effective for improving study\nperformance, although the measured endpoint was planning confidence rather than exam performance.",
+        "claim_types": [
+          "Efficacy"
+        ],
+        "role": "Finding / Claim",
+        "is_empirical_claim": true,
+        "zone_route": "Results",
+        "evidence_items": [
+          {
+            "evidence": "Because the outcome was subjective and the study brief, the findings do not establish improved academic performance.",
+            "source_section": "Discussion",
+            "forward": 0.0113,
+            "reverse": 0.0042,
+            "gap": 0.9958,
+            "fwd_contradiction": 0.0631,
+            "fwd_neutral": 0.9256,
+            "model_used": "nli-MiniLM2",
+            "rank": 1
+          },
+          {
+            "evidence": "Results suggest a modest short-term improvement in self-reported planning confidence.",
+            "source_section": "Discussion",
+            "forward": 0.0094,
+            "reverse": 0.0057,
+            "gap": 0.9943,
+            "fwd_contradiction": 0.0175,
+            "fwd_neutral": 0.9732,
+            "model_used": "nli-MiniLM2",
+            "rank": 2
+          },
+          {
+            "evidence": "Mean confidence increased from 5.2 to 6.7 in FocusBoard and from 5.1 to 6.0 in comparison.",
+            "source_section": "Results",
+            "forward": 0.0081,
+            "reverse": 0.0015,
+            "gap": 0.9985,
+            "fwd_contradiction": 0.0239,
+            "fwd_neutral": 0.968,
+            "model_used": "nli-MiniLM2",
+            "rank": 3
+          }
+        ],
+        "esi": 0.5,
+        "relevance": 1.0,
+        "we_score": 0.006,
+        "spin_flag": true,
+        "support_label": "Flagged (Unverified / Outcome Mismatch)",
+        "explanation": "Direct textual entailment in Discussion was low (0.01). Specific numerical findings may be in unparsed tables or unverified by prose.",
+        "top_evidence": "Because the outcome was subjective and the study brief, the findings do not establish improved academic performance.",
+        "forward": 0.011,
+        "reverse": 0.004,
+        "gap": 0.996,
+        "hedging": 1.0,
+        "hedging_words": [],
+        "model_used": "nli-MiniLM2",
+        "esi_notes": [
+          "Analysis: Adjusted",
+          "ESI assigned: 0.5"
+        ]
+      }
+    ],
+    "warnings": [],
+    "elapsed_seconds": 0.61,
+    "model_status": {
+      "model_name": "cross-encoder/nli-MiniLM2-L6-H768",
+      "loaded": true,
+      "error": null,
+      "fallback_active": false
+    }
+  },
+  "High_Risk": {
+    "pdf_path": "data/demo_papers/SPIN_SENTRY_Demo_High_Risk.pdf",
+    "title": "A Synthetic Pilot Study of StudyFlow: An Example of Internal",
+    "screening_notice": "Automated spin flags are heuristic screening signals for research exploration, not proof of scientific misconduct or clinical trial invalidity.",
+    "summary": {
+      "total_claims": 5,
+      "flagged_claims": 2,
+      "supported_claims": 0,
+      "weak_claims": 0,
+      "spin_risk": "\ud83d\udd34 High",
+      "avg_we_score": 0.046,
+      "flag_rate": 0.4,
+      "empirical_claims": 2,
+      "empirical_flagged": 2,
+      "empirical_avg_we": 0.0,
+      "protocol_statements": 3,
+      "contradiction_count": 2
+    },
+    "claims": [
+      {
+        "sentence": "Background: This fictional example evaluates StudyFlow, a digital coaching program, in 120 adult volunteers.",
+        "types": [
+          "Efficacy"
+        ],
+        "role": "Objective",
+        "is_empirical_claim": false,
+        "entities": {
+          "drugs": [],
+          "outcomes": [],
+          "populations": [
+            "adult"
+          ],
+          "all_entities": [
+            {
+              "text": "StudyFlow",
+              "label": "ORG"
+            },
+            {
+              "text": "120",
+              "label": "CARDINAL"
+            }
+          ],
+          "nlp_available": true
+        },
+        "hedging": 1.0,
+        "hedging_words": [],
+        "type_scores": {
+          "Efficacy": 0.0,
+          "Safety": 0.0,
+          "Generalizability": 0.0,
+          "Comparative": 0.0,
+          "Novelty": 0.0,
+          "Recommendation": 0.0
+        },
+        "zone_route": "Methods"
+      },
+      {
+        "sentence": "The\nabstract reports a 30% improvement in task-completion scores.",
+        "types": [
+          "Efficacy"
+        ],
+        "role": "Finding / Claim",
+        "is_empirical_claim": true,
+        "entities": {
+          "drugs": [],
+          "outcomes": [
+            "improvement"
+          ],
+          "populations": [],
+          "all_entities": [
+            {
+              "text": "30%",
+              "label": "PERCENT"
+            }
+          ],
+          "nlp_available": true
+        },
+        "hedging": 1.0,
+        "hedging_words": [],
+        "type_scores": {
+          "Efficacy": 0.25,
+          "Safety": 0.0,
+          "Generalizability": 0.0,
+          "Comparative": 0.0,
+          "Novelty": 0.0,
+          "Recommendation": 0.0
+        },
+        "zone_route": "Results"
+      },
+      {
+        "sentence": "Methods: Participants were assigned to StudyFlow or\nusual practice for four weeks.",
+        "types": [
+          "Recommendation"
+        ],
+        "role": "Methods",
+        "is_empirical_claim": false,
+        "entities": {
+          "drugs": [],
+          "outcomes": [],
+          "populations": [
+            "participants"
+          ],
+          "all_entities": [
+            {
+              "text": "StudyFlow",
+              "label": "ORG"
+            },
+            {
+              "text": "four weeks",
+              "label": "DATE"
+            }
+          ],
+          "nlp_available": true
+        },
+        "hedging": 1.0,
+        "hedging_words": [],
+        "type_scores": {
+          "Efficacy": 0.0,
+          "Safety": 0.0,
+          "Generalizability": 0.0,
+          "Comparative": 0.0,
+          "Novelty": 0.0,
+          "Recommendation": 0.25
+        },
+        "zone_route": "Methods"
+      },
+      {
+        "sentence": "Results: The primary outcome shows mean change of 2.1 points in StudyFlow and 2.0\npoints in comparison; between-group difference 0.1 points (95% CI -0.8 to 1.0; p=0.81).",
+        "types": [
+          "Efficacy"
+        ],
+        "role": "Methods",
+        "is_empirical_claim": false,
+        "entities": {
+          "drugs": [],
+          "outcomes": [
+            "outcome"
+          ],
+          "populations": [
+            "group"
+          ],
+          "all_entities": [
+            {
+              "text": "2.1",
+              "label": "CARDINAL"
+            },
+            {
+              "text": "StudyFlow",
+              "label": "ORG"
+            },
+            {
+              "text": "2.0",
+              "label": "CARDINAL"
+            },
+            {
+              "text": "0.1",
+              "label": "CARDINAL"
+            },
+            {
+              "text": "95%",
+              "label": "PERCENT"
+            },
+            {
+              "text": "CI",
+              "label": "ORG"
+            },
+            {
+              "text": "1.0",
+              "label": "CARDINAL"
+            },
+            {
+              "text": "p=0.81",
+              "label": "GPE"
+            }
+          ],
+          "nlp_available": true
+        },
+        "hedging": 1.0,
+        "hedging_words": [
+          "shows"
+        ],
+        "type_scores": {
+          "Efficacy": 0.0,
+          "Safety": 0.0,
+          "Generalizability": 0.0,
+          "Comparative": 0.0,
+          "Novelty": 0.0,
+          "Recommendation": 0.0
+        },
+        "zone_route": "Methods"
+      },
+      {
+        "sentence": "Conclusion: StudyFlow\nproduces a substantial and statistically significant improvement.",
+        "types": [
+          "Efficacy"
+        ],
+        "role": "Conclusion",
+        "is_empirical_claim": true,
+        "entities": {
+          "drugs": [],
+          "outcomes": [
+            "improvement"
+          ],
+          "populations": [],
+          "all_entities": [],
+          "nlp_available": true
+        },
+        "hedging": 1.0,
+        "hedging_words": [],
+        "type_scores": {
+          "Efficacy": 0.75,
+          "Safety": 0.0,
+          "Generalizability": 0.0,
+          "Comparative": 0.0,
+          "Novelty": 0.0,
+          "Recommendation": 0.0
+        },
+        "zone_route": "Results"
+      }
+    ],
+    "reports": [
+      {
+        "claim": "Background: This fictional example evaluates StudyFlow, a digital coaching program, in 120 adult volunteers.",
+        "claim_types": [
+          "Efficacy"
+        ],
+        "role": "Objective",
+        "is_empirical_claim": false,
+        "zone_route": "Methods",
+        "evidence_items": [
+          {
+            "evidence": "120 volunteers were assigned, 60 per group.",
+            "source_section": "Methods",
+            "forward": 0.0025,
+            "reverse": 0.0061,
+            "gap": 0.9939,
+            "fwd_contradiction": 0.0241,
+            "fwd_neutral": 0.9734,
+            "model_used": "nli-MiniLM2",
+            "rank": 1
+          },
+          {
+            "evidence": "Data were available for 108 of 120 participants.",
+            "source_section": "Results",
+            "forward": 0.0021,
+            "reverse": 0.1222,
+            "gap": 0.8778,
+            "fwd_contradiction": 0.0155,
+            "fwd_neutral": 0.9823,
+            "model_used": "nli-MiniLM2",
+            "rank": 2
+          },
+          {
+            "evidence": "No external validation cohort was included.",
+            "source_section": "Methods",
+            "forward": 0.0019,
+            "reverse": 0.0028,
+            "gap": 0.9972,
+            "fwd_contradiction": 0.0455,
+            "fwd_neutral": 0.9527,
+            "model_used": "nli-MiniLM2",
+            "rank": 3
+          }
+        ],
+        "esi": 0.5,
+        "relevance": 0.3,
+        "we_score": 0.0,
+        "spin_flag": false,
+        "support_label": "Protocol / Method (Consistent)",
+        "explanation": "Study protocol or design statement aligned with Methods section.",
+        "top_evidence": "120 volunteers were assigned, 60 per group.",
+        "forward": 0.003,
+        "reverse": 0.006,
+        "gap": 0.994,
+        "hedging": 1.0,
+        "hedging_words": [],
+        "model_used": "nli-MiniLM2",
+        "esi_notes": [
+          "Analysis type not detected, using default",
+          "ESI assigned: 0.5"
+        ]
+      },
+      {
+        "claim": "The\nabstract reports a 30% improvement in task-completion scores.",
+        "claim_types": [
+          "Efficacy"
+        ],
+        "role": "Finding / Claim",
+        "is_empirical_claim": true,
+        "zone_route": "Results",
+        "evidence_items": [
+          {
+            "evidence": "This mismatch is intentionally included to test discrepancy detection.",
+            "source_section": "Discussion",
+            "forward": 0.0007,
+            "reverse": 0.0013,
+            "gap": 0.9987,
+            "fwd_contradiction": 0.8605,
+            "fwd_neutral": 0.1388,
+            "model_used": "nli-MiniLM2",
+            "rank": 1
+          },
+          {
+            "evidence": "The between-group difference was 0.1 points (95% CI -0.8 to 1.0; p=0.81).",
+            "source_section": "Results",
+            "forward": 0.0018,
+            "reverse": 0.0655,
+            "gap": 0.9345,
+            "fwd_contradiction": 0.6311,
+            "fwd_neutral": 0.3671,
+            "model_used": "nli-MiniLM2",
+            "rank": 2
+          },
+          {
+            "evidence": "At week four, mean change was 2.1 points (SD 3.4) in StudyFlow and 2.0 points (SD 3.2) in usual practice.",
+            "source_section": "Results",
+            "forward": 0.0051,
+            "reverse": 0.0018,
+            "gap": 0.9982,
+            "fwd_contradiction": 0.2495,
+            "fwd_neutral": 0.7454,
+            "model_used": "nli-MiniLM2",
+            "rank": 3
+          }
+        ],
+        "esi": 0.5,
+        "relevance": 1.0,
+        "we_score": 0.0,
+        "spin_flag": true,
+        "support_label": "Flagged (Contradictory Signal)",
+        "explanation": "Evidence in Discussion directly conflicts with abstract assertion (contradiction score: 0.86).",
+        "top_evidence": "This mismatch is intentionally included to test discrepancy detection.",
+        "forward": 0.001,
+        "reverse": 0.001,
+        "gap": 0.999,
+        "hedging": 1.0,
+        "hedging_words": [],
+        "model_used": "nli-MiniLM2",
+        "esi_notes": [
+          "Analysis type not detected, using default",
+          "ESI assigned: 0.5"
+        ]
+      },
+      {
+        "claim": "Methods: Participants were assigned to StudyFlow or\nusual practice for four weeks.",
+        "claim_types": [
+          "Recommendation"
+        ],
+        "role": "Methods",
+        "is_empirical_claim": false,
+        "zone_route": "Methods",
+        "evidence_items": [
+          {
+            "evidence": "At week four, mean change was 2.1 points (SD 3.4) in StudyFlow and 2.0 points (SD 3.2) in usual practice.",
+            "source_section": "Results",
+            "forward": 0.7321,
+            "reverse": 0.0319,
+            "gap": 0.9681,
+            "fwd_contradiction": 0.026,
+            "fwd_neutral": 0.2419,
+            "model_used": "nli-MiniLM2",
+            "rank": 1
+          },
+          {
+            "evidence": "The prespecified primary endpoint was change in a 20-point task-completion score from baseline to week four.",
+            "source_section": "Methods",
+            "forward": 0.0683,
+            "reverse": 0.003,
+            "gap": 0.997,
+            "fwd_contradiction": 0.2973,
+            "fwd_neutral": 0.6344,
+            "model_used": "nli-MiniLM2",
+            "rank": 2
+          },
+          {
+            "evidence": "No external validation cohort was included.",
+            "source_section": "Methods",
+            "forward": 0.0026,
+            "reverse": 0.0105,
+            "gap": 0.9895,
+            "fwd_contradiction": 0.0536,
+            "fwd_neutral": 0.9438,
+            "model_used": "nli-MiniLM2",
+            "rank": 3
+          }
+        ],
+        "esi": 0.5,
+        "relevance": 0.6,
+        "we_score": 0.22,
+        "spin_flag": false,
+        "support_label": "Protocol / Method (Consistent)",
+        "explanation": "Study protocol or design statement aligned with Results section.",
+        "top_evidence": "At week four, mean change was 2.1 points (SD 3.4) in StudyFlow and 2.0 points (SD 3.2) in usual practice.",
+        "forward": 0.732,
+        "reverse": 0.032,
+        "gap": 0.968,
+        "hedging": 1.0,
+        "hedging_words": [],
+        "model_used": "nli-MiniLM2",
+        "esi_notes": [
+          "Analysis type not detected, using default",
+          "ESI assigned: 0.5"
+        ]
+      },
+      {
+        "claim": "Results: The primary outcome shows mean change of 2.1 points in StudyFlow and 2.0\npoints in comparison; between-group difference 0.1 points (95% CI -0.8 to 1.0; p=0.81).",
+        "claim_types": [
+          "Efficacy"
+        ],
+        "role": "Methods",
+        "is_empirical_claim": false,
+        "zone_route": "Methods",
+        "evidence_items": [
+          {
+            "evidence": "No prespecified analysis supporting a 30% relative improvement is reported.",
+            "source_section": "Results",
+            "forward": 0.0614,
+            "reverse": 0.0026,
+            "gap": 0.9974,
+            "fwd_contradiction": 0.4085,
+            "fwd_neutral": 0.5301,
+            "model_used": "nli-MiniLM2",
+            "rank": 1
+          },
+          {
+            "evidence": "The prespecified primary endpoint was change in a 20-point task-completion score from baseline to week four.",
+            "source_section": "Methods",
+            "forward": 0.0262,
+            "reverse": 0.0028,
+            "gap": 0.9972,
+            "fwd_contradiction": 0.044,
+            "fwd_neutral": 0.9298,
+            "model_used": "nli-MiniLM2",
+            "rank": 2
+          },
+          {
+            "evidence": "No external validation cohort was included.",
+            "source_section": "Methods",
+            "forward": 0.098,
+            "reverse": 0.0019,
+            "gap": 0.9981,
+            "fwd_contradiction": 0.0432,
+            "fwd_neutral": 0.8588,
+            "model_used": "nli-MiniLM2",
+            "rank": 3
+          }
+        ],
+        "esi": 0.5,
+        "relevance": 0.3,
+        "we_score": 0.009,
+        "spin_flag": false,
+        "support_label": "Protocol / Method (Consistent)",
+        "explanation": "Study protocol or design statement aligned with Results section.",
+        "top_evidence": "No prespecified analysis supporting a 30% relative improvement is reported.",
+        "forward": 0.061,
+        "reverse": 0.003,
+        "gap": 0.997,
+        "hedging": 1.0,
+        "hedging_words": [
+          "shows"
+        ],
+        "model_used": "nli-MiniLM2",
+        "esi_notes": [
+          "Analysis type not detected, using default",
+          "ESI assigned: 0.5"
+        ]
+      },
+      {
+        "claim": "Conclusion: StudyFlow\nproduces a substantial and statistically significant improvement.",
+        "claim_types": [
+          "Efficacy"
+        ],
+        "role": "Conclusion",
+        "is_empirical_claim": true,
+        "zone_route": "Results",
+        "evidence_items": [
+          {
+            "evidence": "The numerical results show little evidence of a between-group difference.",
+            "source_section": "Discussion",
+            "forward": 0.0009,
+            "reverse": 0.0034,
+            "gap": 0.9966,
+            "fwd_contradiction": 0.9498,
+            "fwd_neutral": 0.0493,
+            "model_used": "nli-MiniLM2",
+            "rank": 1
+          },
+          {
+            "evidence": "No prespecified analysis supporting a 30% relative improvement is reported.",
+            "source_section": "Results",
+            "forward": 0.0037,
+            "reverse": 0.0012,
+            "gap": 0.9988,
+            "fwd_contradiction": 0.8851,
+            "fwd_neutral": 0.1113,
+            "model_used": "nli-MiniLM2",
+            "rank": 2
+          },
+          {
+            "evidence": "This mismatch is intentionally included to test discrepancy detection.",
+            "source_section": "Discussion",
+            "forward": 0.0015,
+            "reverse": 0.0015,
+            "gap": 0.9985,
+            "fwd_contradiction": 0.2664,
+            "fwd_neutral": 0.7321,
+            "model_used": "nli-MiniLM2",
+            "rank": 3
+          }
+        ],
+        "esi": 0.5,
+        "relevance": 1.0,
+        "we_score": 0.0,
+        "spin_flag": true,
+        "support_label": "Flagged (Contradictory Signal)",
+        "explanation": "Evidence in Discussion directly conflicts with abstract assertion (contradiction score: 0.95).",
+        "top_evidence": "The numerical results show little evidence of a between-group difference.",
+        "forward": 0.001,
+        "reverse": 0.003,
+        "gap": 0.997,
+        "hedging": 1.0,
+        "hedging_words": [],
+        "model_used": "nli-MiniLM2",
+        "esi_notes": [
+          "Analysis type not detected, using default",
+          "ESI assigned: 0.5"
+        ]
+      }
+    ],
+    "warnings": [],
+    "elapsed_seconds": 1.1,
+    "model_status": {
+      "model_name": "cross-encoder/nli-MiniLM2-L6-H768",
+      "loaded": true,
+      "error": null,
+      "fallback_active": false
+    }
+  }
+}

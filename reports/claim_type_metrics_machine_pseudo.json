@@ -1,0 +1,172 @@
+{
+  "trained_at_utc": "2026-10-20T01:49:14.214568+00:00",
+  "label_source": "machine_generated_pseudo_label",
+  "evaluation_target": "agreement_with_machine_generated_labels",
+  "dataset_path": "C:\\Users\\Lenovo\\Documents\\SPIN-SENTRY\\data\\research_dataset\\machine_pseudo_labels.csv",
+  "dataset_sha256": "5d7e9001298cade309acc53cc11dc3cc42f0822d1faa08ca1a34a1bc69e16866",
+  "dataset_rows": 649,
+  "train_rows": 457,
+  "test_rows": 192,
+  "test_size": 0.25,
+  "seed": 42,
+  "paper_count": 21,
+  "split": "paper_grouped",
+  "train_papers": 15,
+  "test_papers": 6,
+  "train_paper_ids": [
+    "PMC12486974",
+    "PMC12543108",
+    "PMC12550449",
+    "PMC12581794",
+    "PMC12647125",
+    "PMC12676765",
+    "PMC12678040",
+    "PMC12690432",
+    "PMC12725555",
+    "PMC12743696",
+    "PMC12783969",
+    "PMC12825039",
+    "PMC13065175",
+    "PMC13220170",
+    "PMC7618564"
+  ],
+  "test_paper_ids": [
+    "PMC12381666",
+    "PMC12446902",
+    "PMC12551264",
+    "PMC12662812",
+    "PMC12815918",
+    "PMC13054461"
+  ],
+  "multi_label_rows": 107,
+  "labels": [
+    "Efficacy",
+    "Safety",
+    "Generalizability",
+    "Comparative",
+    "Novelty",
+    "Recommendation"
+  ],
+  "label_counts": {
+    "Efficacy": 474,
+    "Safety": 100,
+    "Generalizability": 18,
+    "Comparative": 119,
+    "Novelty": 15,
+    "Recommendation": 30
+  },
+  "exact_match_agreement": 0.625,
+  "f1_micro": 0.7294117647058823,
+  "f1_macro": 0.5146804042106338,
+  "precision_micro": 0.7673267326732673,
+  "recall_micro": 0.695067264573991,
+  "hamming_loss": 0.0998263888888889,
+  "per_label": {
+    "Efficacy": {
+      "precision": 0.757396449704142,
+      "recall": 0.9552238805970149,
+      "f1": 0.8448844884488449,
+      "support": 134,
+      "confusion_matrix": [
+        [
+          17,
+          41
+        ],
+        [
+          6,
+          128
+        ]
+      ]
+    },
+    "Safety": {
+      "precision": 0.8571428571428571,
+      "recall": 0.15,
+      "f1": 0.2553191489361702,
+      "support": 40,
+      "confusion_matrix": [
+        [
+          151,
+          1
+        ],
+        [
+          34,
+          6
+        ]
+      ]
+    },
+    "Generalizability": {
+      "precision": 1.0,
+      "recall": 0.5,
+      "f1": 0.6666666666666666,
+      "support": 2,
+      "confusion_matrix": [
+        [
+          190,
+          0
+        ],
+        [
+          1,
+          1
+        ]
+      ]
+    },
+    "Comparative": {
+      "precision": 0.8181818181818182,
+      "recall": 0.5454545454545454,
+      "f1": 0.6545454545454545,
+      "support": 33,
+      "confusion_matrix": [
+        [
+          155,
+          4
+        ],
+        [
+          15,
+          18
+        ]
+      ]
+    },
+    "Novelty": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "support": 10,
+      "confusion_matrix": [
+        [
+          181,
+          1
+        ],
+        [
+          10,
+          0
+        ]
+      ]
+    },
+    "Recommendation": {
+      "precision": 1.0,
+      "recall": 0.5,
+      "f1": 0.6666666666666666,
+      "support": 4,
+      "confusion_matrix": [
+        [
+          188,
+          0
+        ],
+        [
+          2,
+          2
+        ]
+      ]
+    }
+  },
+  "python_version": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+  "scikit_learn_version": "1.9.1",
+  "artifacts": {
+    "model": "C:\\Users\\Lenovo\\Documents\\SPIN-SENTRY\\models\\claim_type_model_machine_pseudo.joblib",
+    "vectorizer": "C:\\Users\\Lenovo\\Documents\\SPIN-SENTRY\\models\\claim_type_vectorizer_machine_pseudo.joblib",
+    "label_map": "C:\\Users\\Lenovo\\Documents\\SPIN-SENTRY\\models\\claim_type_label_map_machine_pseudo.json",
+    "config": "C:\\Users\\Lenovo\\Documents\\SPIN-SENTRY\\models\\claim_type_training_config_machine_pseudo.json",
+    "metrics": "C:\\Users\\Lenovo\\Documents\\SPIN-SENTRY\\reports\\claim_type_metrics_machine_pseudo.json",
+    "report": "C:\\Users\\Lenovo\\Documents\\SPIN-SENTRY\\reports\\claim_type_report_machine_pseudo.md"
+  }
+}

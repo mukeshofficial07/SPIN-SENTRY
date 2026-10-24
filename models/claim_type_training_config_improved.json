@@ -1,0 +1,43 @@
+{
+  "algorithm": "TF-IDF (sublinear, min_df=2, max_feat=60000) + OneVsRest(LogisticRegression(C=1.5, balanced))",
+  "label_source": "ai_batch_annotations",
+  "evaluation_target": "agreement_with_ai_generated_batch_labels",
+  "evaluation_note": "Evaluated on 5 holdout test papers (PMC12381666, PMC12446902, PMC12662812, PMC12743696, PMC12815918) comprising 552 examples, of which 549 (99.5%) are AI-batch heuristic annotations and 3 (0.5%) are genuine human annotations. Metrics reflect model agreement with AI heuristics, NOT human ground truth.",
+  "test_size": 0.2,
+  "seed": 42,
+  "split": "GroupShuffleSplit by paper_id",
+  "vectorizer": {
+    "ngram_range": [
+      1,
+      2
+    ],
+    "min_df": 2,
+    "max_features": 60000,
+    "sublinear_tf": true,
+    "strip_accents": "unicode"
+  },
+  "classifier": {
+    "C": 1.5,
+    "max_iter": 2000,
+    "class_weight": "balanced",
+    "random_state": 42
+  },
+  "tuned_thresholds": {
+    "Efficacy": 0.45,
+    "Safety": 0.45,
+    "Generalizability": 0.45,
+    "Comparative": 0.4,
+    "Novelty": 0.45,
+    "Recommendation": 0.4
+  },
+  "labels_in_order": [
+    "Efficacy",
+    "Safety",
+    "Generalizability",
+    "Comparative",
+    "Novelty",
+    "Recommendation"
+  ],
+  "dataset_sha256": "684d92afc88f853afde7f03717fd078f23945186cbc273a72239bd4c5102a969",
+  "model_includes_vectorizer": true
+}

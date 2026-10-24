@@ -1,0 +1,57 @@
+{
+  "source_file": "C:\\Users\\Lenovo\\Documents\\SPIN-SENTRY\\data\\research_dataset\\machine_suggested_annotations_current.csv",
+  "source_sha256": "f907a79fb203cf41c026158a4fdca44d11ac958c3cbf12aaeefeddea5b55e4f2",
+  "label_source": "machine_generated_pseudo_label",
+  "source_rows": 3736,
+  "included_rows": 649,
+  "excluded_rows": 3087,
+  "included_paper_count": 21,
+  "included_paper_ids": [
+    "PMC12381666",
+    "PMC12446902",
+    "PMC12486974",
+    "PMC12543108",
+    "PMC12550449",
+    "PMC12551264",
+    "PMC12581794",
+    "PMC12647125",
+    "PMC12662812",
+    "PMC12676765",
+    "PMC12678040",
+    "PMC12690432",
+    "PMC12725555",
+    "PMC12743696",
+    "PMC12783969",
+    "PMC12815918",
+    "PMC12825039",
+    "PMC13054461",
+    "PMC13065175",
+    "PMC13220170",
+    "PMC7618564"
+  ],
+  "multi_label_rows": 107,
+  "category_counts": {
+    "Efficacy": 474,
+    "Safety": 100,
+    "Generalizability": 18,
+    "Comparative": 119,
+    "Novelty": 15,
+    "Recommendation": 30
+  },
+  "primary_exclusion_counts_disjoint": {
+    "possible_extraction_damage": 31,
+    "likely_non_claim": 883,
+    "ambiguous_claim_status": 1491,
+    "ambiguous_or_uncertain": 682
+  },
+  "exclusion_flag_counts_overlapping": {
+    "possible_extraction_damage": 31,
+    "likely_non_claim": 890,
+    "ambiguous_or_uncertain": 2536,
+    "missing_labels": 2788,
+    "ambiguous_claim_status": 1502
+  },
+  "human_verified_annotations_created": 0,
+  "human_review_statuses_modified": 0,
+  "interpretation": "Machine-generated pseudo-labels only; no human verification is asserted."
+}

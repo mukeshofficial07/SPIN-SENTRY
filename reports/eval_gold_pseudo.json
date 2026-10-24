@@ -1,0 +1,120 @@
+{
+  "model_key": "pseudo",
+  "model_file": "claim_type_model_machine_pseudo.joblib",
+  "evaluated_at_utc": "2026-10-23T16:11:35.626623+00:00",
+  "evaluation_type": "human_gold_standard",
+  "evaluation_note": "Evaluated on 197 genuinely human-reviewed rows across 22 papers.",
+  "n_examples": 197,
+  "thresholds_applied": {
+    "Efficacy": 0.4,
+    "Safety": 0.4,
+    "Generalizability": 0.4,
+    "Comparative": 0.4,
+    "Novelty": 0.4,
+    "Recommendation": 0.4
+  },
+  "exact_match": 0.4518,
+  "hamming_loss": 0.1387,
+  "precision_micro": 0.6806,
+  "recall_micro": 0.8,
+  "f1_micro": 0.7355,
+  "f1_macro": 0.6483,
+  "per_label": {
+    "Efficacy": {
+      "precision": 0.7955,
+      "recall": 0.9333,
+      "f1": 0.8589,
+      "support": 150,
+      "confusion_matrix": [
+        [
+          11,
+          36
+        ],
+        [
+          10,
+          140
+        ]
+      ]
+    },
+    "Safety": {
+      "precision": 0.383,
+      "recall": 0.5455,
+      "f1": 0.45,
+      "support": 33,
+      "confusion_matrix": [
+        [
+          135,
+          29
+        ],
+        [
+          15,
+          18
+        ]
+      ]
+    },
+    "Generalizability": {
+      "precision": 0.8,
+      "recall": 0.5,
+      "f1": 0.6154,
+      "support": 16,
+      "confusion_matrix": [
+        [
+          179,
+          2
+        ],
+        [
+          8,
+          8
+        ]
+      ]
+    },
+    "Comparative": {
+      "precision": 0.5604,
+      "recall": 0.8095,
+      "f1": 0.6623,
+      "support": 63,
+      "confusion_matrix": [
+        [
+          94,
+          40
+        ],
+        [
+          12,
+          51
+        ]
+      ]
+    },
+    "Novelty": {
+      "precision": 1.0,
+      "recall": 0.5,
+      "f1": 0.6667,
+      "support": 8,
+      "confusion_matrix": [
+        [
+          189,
+          0
+        ],
+        [
+          4,
+          4
+        ]
+      ]
+    },
+    "Recommendation": {
+      "precision": 1.0,
+      "recall": 0.4667,
+      "f1": 0.6364,
+      "support": 15,
+      "confusion_matrix": [
+        [
+          182,
+          0
+        ],
+        [
+          8,
+          7
+        ]
+      ]
+    }
+  }
+}

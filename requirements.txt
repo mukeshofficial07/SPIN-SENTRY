@@ -1,0 +1,36 @@
+# SPIN-SENTRY dependencies
+# Tested on Python 3.13 / Windows 10+
+# Install: pip install -r requirements.txt
+# For CPU-only torch: pip install torch --index-url https://download.pytorch.org/whl/cpu
+
+# --- Core UI ---
+streamlit>=1.35
+
+# --- PDF extraction ---
+pdfplumber>=0.11
+
+# --- NLP utilities ---
+nltk>=3.8
+spacy>=3.7
+
+# --- NLI model (cross-encoder, ~90 MB download on first use) ---
+sentence-transformers>=3.0
+
+# --- Torch CPU-only (install separately if needed) ---
+# torch>=2.2 --index-url https://download.pytorch.org/whl/cpu
+
+# --- Fuzzy matching for zone headers ---
+rapidfuzz>=3.9
+
+# --- Data / display ---
+pandas>=2.2
+
+# --- Optional local Stage 1 classifier training ---
+scikit-learn>=1.4
+joblib>=1.3
+
+# --- Testing ---
+pytest>=8.0
+
+# --- HTTP (for sample PDF download) ---
+requests>=2.31

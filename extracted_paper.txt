@@ -1,0 +1,128 @@
+The Tri-Review Architecture: A Multi-Pass Framework for
+Intra-Document Discrepancy Detection
+(Review I: Forward Alignment Pipeline, Stages 1–4)
+Author Name(s) To Be Inserted
+Department, Affiliation/Institution
+City, Country — email@institution.edu
+[Author name(s) and affiliation were not supplied in the source manuscript and must be completed by the author(s) before submission.]
+Abstract—Scientific abstracts frequently contain rhetorical spin—claims that overstate findings relative to the full text. Current natural language inference (NLI) systems typically verify claims against external knowledge bases, failing to detect intra-document discrepancies where a paper's own results contradict its abstract. This paper presents SPIN-SENTRY, a pipeline that segments biomedical papers into four evidence zones (Results, Harms, Limitations, Methods) and performs bidirectional claim-evidence alignment. The approach introduces (1) six-type claim classification (Efficacy, Safety, Generalizability, Comparative, Novelty, Recommendation) with entity anchoring, (2) isolated Harms-zone segmentation using discourse-aware parsing, and (3) evidence-strength weighted entailment that weights alignment scores by study design and sample size. The pipeline is evaluated on a corpus of 100 clinical-trial papers with expert spin annotations; on the subset evaluated to date it achieves 89% claim-type classification accuracy, 94% Harms-zone isolation accuracy (F1 = 0.93), and 81% Precision@5 for supporting-evidence retrieval, against a 62% monolithic-NLI baseline. Full end-to-end evaluation across all 100 papers is in progress. This work establishes the Forward Alignment stage of a planned Tri-Review architecture for automated intra-document spin detection, with implications for scientific integrity and post-publication peer review.
+Index Terms—Spin detection, natural language inference, biomedical text mining, claim verification, evidence alignment, scientific integrity, entailment.
+
+I. INTRODUCTION
+Spin—the practice of presenting research findings in a way that exaggerates their strength, safety, or generalizability—appears in 57–84% of biomedical abstracts [1], [2]. Manual audits have repeatedly shown that abstracts frequently assert “well-tolerated” interventions while the corresponding harms tables list double-digit rates of serious adverse events, or claim broad efficacy while the methods section restricts enrolment to a narrow demographic. Such internal contradictions remain invisible to conventional fact-checking pipelines that retrieve evidence from external repositories such as Wikipedia or PubMed. The core gap is therefore not external factuality but intra-document coherence: does the body of the paper itself support the claims made in its abstract?
+Standard NLI architectures treat an entire article as an undifferentiated bag of sentences. Consequently they cannot isolate safety statements from efficacy statements, nor can they penalize over-generalization that arises when a claim implies a broader population than the methods section actually recruited. Manual spin taxonomies exist [1], [3], yet they remain unscalable for the volume of contemporary literature.
+This paper addresses these limitations with SPIN-SENTRY, the first stage of a planned Tri-Review architecture. SPIN-SENTRY implements Forward Evidence Alignment through three innovations. First, Hybrid Claim Parsing with Biomedical Entity Anchoring (HCP-BEA) classifies each abstract sentence into one of six spin-relevant types and routes it to the appropriate evidence zone. Second, Multi-Zone Evidence Mapping (MZEM) partitions the full text into Results, Harms, Limitations, and Methods zones, with explicit isolation of the Harms section—a step that prior section classifiers have not emphasized. Third, Evidence-Strength Weighted Entailment (ESWE) multiplies directional NLI scores by an Evidence Strength Index derived from study design, sample size, and analysis type, thereby down-weighting weak or under-powered support.
+The resulting system constitutes an automated detector of intra-document spin. It enables systematic pre- and post-publication screening for selective reporting and supplies the technical foundation for a subsequent Inverse Contradiction Mining stage that will actively search for omitted safety signals.
+II. RELATED WORK
+A. Scientific Spin Detection
+Khan et al. [1] formalized a six-category taxonomy of spin in cardiovascular trial abstracts and demonstrated high prevalence through manual annotation. Lazarus et al. [2] extended the analysis to non-randomized studies and confirmed similar rates of overstatement. Chiu et al. [3] further showed that manual detection, while accurate, cannot scale to the volume of published trials. All existing work remains annotation-driven; no automated alignment engine has been proposed.
+B. Claim Verification
+Large-scale NLI benchmarks such as FEVER and SciFact retrieve supporting or refuting sentences from external corpora. These systems answer the question “is this claim true according to Wikipedia?” rather than “does this paper's own body support its abstract?” Recent biomedical claim extractors treat the full text monolithically and therefore miss zone-specific omissions, particularly the under-reporting of harms.
+C. Biomedical Text Mining
+SciBERT [4] and BioBERT [5] provide section-classification and entity-recognition backbones. This work advances their use by employing section labels not merely for structural parsing but for the deliberate isolation of the Harms zone and for type-conditioned routing of claims. To the authors' knowledge, no prior system combines zonal segmentation with bidirectional intra-document NLI for the explicit purpose of spin detection.
+III. PROPOSED METHODOLOGY
+Fig. 1 shows the four-stage Forward Alignment pipeline evaluated in this work. An abstract is decomposed into typed claims (Stage 1), the full-text body is segmented into four evidence zones (Stage 2), each claim is aligned bidirectionally against evidence drawn from its matching zone (Stage 3), and the resulting entailment scores are re-weighted by evidence quality to produce a final support score (Stage 4). Fig. 1 is reproduced at full text width below for legibility.
+
+
+Fig. 1.  Proposed Forward Alignment pipeline for abstract–body discrepancy detection.
+
+A. Stage 1: Hybrid Claim Parser with Biomedical Entity Anchoring (HCP-BEA)
+Given an abstract A, HCP-BEA first applies BioBERT tokenization and sentence segmentation. Named-entity recognition then anchors each sentence to drug names, clinical outcomes, and population descriptors. A fine-tuned multi-label classifier assigns one or more of six claim types: Efficacy (“superior to placebo”), Safety (“well-tolerated”), Generalizability (“effective across diverse populations”), Comparative (“superior to standard of care”), Novelty (“first demonstration”), and Recommendation (“should be considered for clinical use”). Hedging language is scored to produce a continuous strength value. The output is a set of typed, entity-anchored claims C = {(ci, ti, ei, si)}. Claim type determines subsequent zone routing: safety claims are preferentially matched against the Harms zone, while efficacy claims are matched against Results.
+B. Stage 2: Multi-Zone Evidence Mapper (MZEM)
+Standard NLI collapses the full text into a single context window. MZEM instead partitions the article into four evidence zones using a SciBERT section classifier augmented with discourse cues: (1) Results — primary and secondary outcome data; (2) Harms — adverse events, discontinuations, and safety tables, explicitly isolated; (3) Limitations — statements of under-powering, selection bias, or restricted generalizability; and (4) Methods — design, eligibility criteria, and intervention details. Within the Results zone, primary versus secondary outcomes are further distinguished to reduce cherry-picking. The Harms zone is extracted independently so that safety claims cannot be satisfied by efficacy sentences alone.
+C. Stage 3: Directional Claim–Evidence NLI (DC-NLI)
+Classic NLI is unidirectional (premise → hypothesis). DC-NLI computes both directions, as given in (1)–(3):
+	forward = entailment(e, c)	(1)
+	reverse = entailment(c, e)	(2)
+	gap = 1 − reverse	(3)
+The reverse score penalizes generalizability stretch: an abstract claim that “works in elderly patients” fails the reverse check when the Methods section reports enrolment limited to ages 60–65. The pair (forward, gap) is passed to the final weighting stage.
+D. Stage 4: Evidence-Strength Weighted Entailment (ESWE)
+Not every supporting sentence carries equal weight. ESWE defines the weighted-entailment score in (4):
+	WE(c, e) = NLI(c, e) × ESI(e) × relevance(t, z)	(4)
+where ESI is an Evidence Strength Index derived from study design, sample size, and analysis type, as summarized in Table I.
+TABLE I
+EVIDENCE STRENGTH INDEX (ESI)
+
+Zone–type relevance further modulates the score: safety claims receive full weight only from the Harms zone and reduced weight from Results; generalizability claims are scored primarily against Methods. The final ranked list of evidence sentences is returned together with the composite WE score.
+E. Worked Example
+To illustrate the pipeline, consider a representative abstract stating two claims: an efficacy claim (“Drug X demonstrated a significant reduction in symptom severity”) and a safety claim (“Drug X was well-tolerated with a favorable safety profile”). The corresponding body reports, in the Results zone, a 34% reduction versus placebo (p < 0.001, RCT, n = 1240, intention-to-treat); in the Harms zone, serious adverse events in 15% of the treatment arm and an 8% discontinuation rate; and, in the Methods zone, enrolment restricted to ages 60–65. Table II traces both claims through all four stages.
+TABLE II
+WORKED EXAMPLE: STAGE-BY-STAGE OUTPUT
+
+The isolated Harms-zone routing (Stage 2) is what allows the 15% serious-adverse-event rate to pull the forward entailment score for “well-tolerated” down to 0.24; a monolithic NLI pass over the whole document would dilute this signal against the larger Results section. Forward Alignment reports a low support score for c2, flagging it for reviewer attention, but does not yet actively confirm the specific contradiction. Generating and searching for that inverse hypothesis is the function of the planned Inverse Contradiction Mining stage, described as future work in Section VI.
+IV. EXPERIMENTAL SETUP
+A corpus of 100 clinical-trial papers was assembled from the Khan et al. [1] cardiovascular RCT set and the Lazarus et al. [2] non-randomized collection, each carrying expert binary spin labels and spin-type annotations. Primary metrics are Precision@K (correct evidence sentence recovered in the top-K ranked list), alignment accuracy (correlation of forward scores with expert support judgments), and zone-isolation F1 for the Harms section.
+Three baselines are compared: (1) monolithic NLI over the entire document, (2) abstract-only self-entailment, and (3) random sentence retrieval. The hypotheses under test are H1: zone-aware retrieval will outperform monolithic NLI, especially on safety claims; H2: bidirectional scoring will improve recall of generalizability stretch; and H3: ESI weighting will suppress false positives arising from under-powered studies.
+Sufficient project-timeline information (e.g., dated milestones for literature review, dataset collection, and evaluation phases) was not present in the source manuscript to construct a truthful Gantt chart. No timeline chart is included for this reason; the author(s) should supply dated milestones if a project Gantt chart is required for submission.
+V. RESULTS AND DISCUSSION
+A. Results to Date
+Manual validation of HCP-BEA on a held-out set of 20 abstracts achieved 89% claim-type accuracy. MZEM correctly isolated the Harms section in 94% of papers (F1 = 0.93). Full end-to-end evaluation on the 100-paper corpus is in progress; early runs indicate Precision@5 of approximately 81% for supporting-evidence retrieval, a clear margin over the monolithic baseline (62%), as summarized in Table III.
+TABLE III
+PRELIMINARY RESULTS
+
+These results suggest that zonal isolation and type-conditioned routing are decisive for detecting selective reporting of harms. The present system implements only the Forward Alignment stage of the planned Tri-Review architecture; Inverse Contradiction Mining, which actively generates safety hypotheses and searches for their absence, remains future work.
+B. Completion Timeline and Planned Evaluation
+The Precision@5 figure above reflects the held-out validation subset processed to date; the remaining papers in the corpus are queued for the same pipeline run. Full end-to-end evaluation is expected to complete within three weeks of this report. On completion, the following will be reported: a confusion matrix (predicted support / weak-support / no-support versus expert spin labels) at the claim level; precision, recall, and F1 broken out per claim type; zone-isolation F1 for all four zones individually; and a comparison against all three baselines defined in Section IV to directly test H1–H3.
+C. Error and Failure Analysis
+The 94% Harms-zone isolation rate implies zone misclassification in roughly one in sixteen papers. Manual inspection of the current error cases points to three recurring failure modes: (1) non-standard section headers, where harms are labeled “Tolerability” or “Safety Outcomes” rather than “Adverse Events,” increasing the likelihood of misrouting by the SciBERT section classifier; (2) merged Results/Harms sections, where a minority of papers report efficacy and safety data in a single undifferentiated block, weakening the explicit-isolation assumption underlying MZEM and DC-NLI's zone-conditioned matching; and (3) missing study-design metadata, where absent sample-size or analysis-type information causes ESWE to fall back to a conservative default ESI, potentially under-weighting genuinely strong evidence. The full 100-paper run (Section V-B) is expected to quantify how often each mode occurs and its effect on downstream support scores.
+D. Ethical Considerations and Limitations
+Ethical deployment requires careful calibration to avoid over-flagging legitimate cautious language while still surfacing genuine overstatement. Three limitations bear directly on this calibration. First, false-positive risk: hedged or appropriately cautious language risks being scored as weak support and flagged alongside genuine overstatement; false-positive rate will be reported alongside precision and recall in the full evaluation, and the HCP-BEA hedging-strength score (Section III-A) will be examined as a means of suppressing flags on appropriately hedged claims. Second, annotator agreement: the expert spin labels underlying the corpus [1], [2] were produced by domain annotators, but inter-rater reliability specific to the 100-paper subset has not yet been computed and is treated as an open item. Third, corpus generalizability: the corpus is drawn entirely from cardiovascular RCT and non-randomized study collections; performance on other domains, such as oncology or psychiatry, remains untested, and the corpus size is modest for claims of statistical robustness. Given these limitations, the system is positioned as a triage and flagging aid for human reviewers rather than an autonomous spin verdict.
+VI. CONCLUSION AND FUTURE WORK
+SPIN-SENTRY is an automated pipeline that detects intra-document spin by combining six-type claim classification, explicit Harms-zone isolation, bidirectional entailment, and evidence-strength weighting. On a curated set of 100 annotated clinical-trial papers it recovers supporting evidence with approximately 81% precision on the subset evaluated to date, substantially above a monolithic-NLI baseline of 62%, with the full run scheduled to complete within three weeks.
+Future work will incorporate Inverse Contradiction Mining to surface omitted safety signals and will extend the system to the remaining spin categories defined by Khan et al. The resulting Tri-Review architecture is intended to provide a practical tool for both pre-publication screening and large-scale post-publication integrity audits, subject to the false-positive, annotator-agreement, and generalizability caveats raised in Section V-D.
+REFERENCES
+[1]  M. S. Khan et al., “Prevalence of spin in abstracts of cardiovascular randomized controlled trials,” Circulation, 2019.
+[2]  C. Lazarus et al., “Classification and prevalence of spin in abstracts of non-randomized studies,” BMJ, 2015.
+[3]  M. H. Chiu et al., “Manual detection of spin in biomedical literature,” 2017.
+[4]  I. Beltagy, K. Lo, and A. Cohan, “SciBERT: A pretrained language model for scientific text,” in Proc. EMNLP, 2019.
+[5]  J. Lee et al., “BioBERT: a pre-trained biomedical language representation model for biomedical text mining,” Bioinformatics, 2020.
+Study Design
+Sample Size
+Analysis Type
+ESI
+RCT
+> 1000
+Intention-to-treat
+1.0
+RCT
+< 100
+Per-protocol
+0.7
+Observational
+> 5000
+Adjusted
+0.6
+Case series
+N < 50
+Uncontrolled
+0.2
+Stage
+Claim c1 (Efficacy)
+Claim c2 (Safety)
+1 — HCP-BEA
+Efficacy; Drug X
+Safety; Drug X
+2 — MZEM
+Results zone
+Harms zone
+3 — DC-NLI
+fwd 0.89, rev 0.81, gap 0.19
+fwd 0.24, rev 0.30, gap 0.70
+4 — ESWE
+ESI 1.0 → WE 0.89
+ESI 1.0 → WE 0.24
+Output
+Score 0.89 (supported)
+Score 0.24 (flagged)
+Metric
+SPIN-SENTRY
+Baseline
+Claim-type accuracy (n = 20)
+89%
+—
+Harms-zone isolation F1 (n = 100)
+0.93
+—
+Precision@5 (in progress)
+≈81%
+62%

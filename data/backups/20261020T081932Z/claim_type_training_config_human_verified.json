@@ -1,0 +1,41 @@
+{
+  "algorithm": "TF-IDF + OneVsRest(LogisticRegression)",
+  "label_source": "human_verified",
+  "evaluation_target": "agreement_with_human_verified_labels",
+  "test_size": 0.2,
+  "seed": 42,
+  "split": "GroupShuffleSplit by paper_id",
+  "vectorizer": {
+    "ngram_range": [
+      1,
+      2
+    ],
+    "min_df": 1,
+    "max_features": 50000,
+    "strip_accents": "unicode"
+  },
+  "classifier": {
+    "max_iter": 2000,
+    "class_weight": "balanced",
+    "random_state": 42,
+    "threshold": 0.5
+  },
+  "labels_in_order": [
+    "Efficacy",
+    "Safety",
+    "Generalizability",
+    "Comparative",
+    "Novelty",
+    "Recommendation"
+  ],
+  "dataset_sha256": "684d92afc88f853afde7f03717fd078f23945186cbc273a72239bd4c5102a969",
+  "model_includes_vectorizer": true,
+  "artifacts": {
+    "model": "C:\\Users\\Lenovo\\Documents\\SPIN-SENTRY\\models\\claim_type_model_human_verified.joblib",
+    "vectorizer": "C:\\Users\\Lenovo\\Documents\\SPIN-SENTRY\\models\\claim_type_vectorizer_human_verified.joblib",
+    "label_map": "C:\\Users\\Lenovo\\Documents\\SPIN-SENTRY\\models\\claim_type_label_map_human_verified.json",
+    "config": "C:\\Users\\Lenovo\\Documents\\SPIN-SENTRY\\models\\claim_type_training_config_human_verified.json",
+    "metrics": "C:\\Users\\Lenovo\\Documents\\SPIN-SENTRY\\reports\\claim_type_metrics_human_verified.json",
+    "report": "C:\\Users\\Lenovo\\Documents\\SPIN-SENTRY\\reports\\claim_type_report_human_verified.md"
+  }
+}
